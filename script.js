@@ -4,6 +4,13 @@ let activeIndex = 0;
 // grab ui elements
 const container = document.querySelector(".container");
 const elements = [...document.querySelectorAll(".child")];
+
+// create dot for every child element
+for (let element of elements) {
+  const li = document.createElement("li");
+  document.querySelector("nav ul").appendChild(li);
+}
+
 const dots = [...document.querySelectorAll("nav ul li")];
 
 // handle intersection event with the current viewport
