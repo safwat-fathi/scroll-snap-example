@@ -53,8 +53,8 @@ nav ul li:not(:last-child) {
   scroll-snap-align: start;
   height: 100%;
   min-height: 100vh;
-  /* width: 100vw; */
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .gallery {
