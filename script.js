@@ -6,10 +6,15 @@ const container = document.querySelector(".container");
 const elements = [...document.querySelectorAll(".child")];
 
 // create dot for every child element
-for (let element of elements) {
+// for (let element of elements) {
+//   const li = document.createElement("li");
+//   document.querySelector("nav ul").appendChild(li);
+// }
+
+elements.forEach(() => {
   const li = document.createElement("li");
   document.querySelector("nav ul").appendChild(li);
-}
+});
 
 const dots = [...document.querySelectorAll("nav ul li")];
 
@@ -20,6 +25,10 @@ function handleIntersect(entries) {
   if (currEntry) {
     const currIndex = elements.findIndex((el) => el === currEntry.target);
     activeIndex = currIndex;
+    if (document.querySelector("nav ul li.active")) {
+      document.querySelector("nav ul li.active").classList.remove("active");
+    }
+    dots[activeIndex].classList.add("active");
   }
 }
 
